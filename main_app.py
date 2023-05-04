@@ -6,9 +6,10 @@ import intro_app
 import data_app
 import eda_app
 import stat_app
+import ml_app
 
 def main():
-    st.set_page_config(layout="wide")
+    st.set_page_config(page_title='Store Sales', layout="wide")
     with st.sidebar:
         selected = option_menu("Main Menu", ["INTRO", "DATA", "EDA", "STAT", "ML"],
                                icons=["house", "card-checklist", "bar-chart", "clipboard-data", "gear"],
@@ -24,9 +25,9 @@ def main():
     if selected == "EDA":
         eda_app.eda_app()
     if selected == "STAT":
-        st.subheader("STATS")
+        stat_app.stat_app()
     if selected == "ML":
-        st.subheader("Machine Learning")
+        ml_app.ml_app()
 
 if __name__ == "__main__":
     main()
